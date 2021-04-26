@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+      .container
+      {
+        background-color:rgb(84, 223, 233) ;
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+    
+  <h2 style="color: rgb(241, 141, 10);text-align: center;">CGPA Calculator</h2><br>
+  <form  id="cgpa">
+    <label>RollNo:</label>
+    <input type="number"   placeholder="Enter your Rollno" id="rollno" ><br><br>
+    <div class="form-group">
+      <div class="form-group col-md-6"> 
+      <label>Semester 1 :</label>
+        <input type="number" class="form-control"  id="sem1" placeholder="Enter your Semester 1 GPA" name="sem1">
+      </div>
+    <div class="form-group">
+      <div class="form-group col-md-6"> 
+        <label>Semester 2:</label>
+          <input type="number" class="form-control" id="sem2" placeholder="Enter your Semester 2 GPA" name="sem2">
+        </div>
+      <div class="form-group">
+        <div class="form-group col-md-6"> 
+        <label>Semester 3:</label>
+          <input type="number" class="form-control" id="sem3" placeholder="Enter your Semester 3 GPA" name="sem3">
+        </div>
+
+      <div class="form-group">
+        <div class="form-group col-md-6"> 
+        <label>Semester 4:</label>
+          <input type="number" class="form-control" id="sem4" placeholder="Enter your Semester 4 GPA" name="sem4">
+        </div>
+      <div class="form-group">
+        <div class="form-group col-md-6"> 
+        <label>Semester 5:</label>
+          <input type="number" class="form-control" id="sem5" placeholder="Enter your Semester 5 GPA" name="sem5">
+        </div>
+
+      <div class="form-group">
+        <div class="form-group col-md-6"> 
+        <label>Semester 6:</label>
+          <input type="number" class="form-control" id="sem6" placeholder="Enter your Semester 6 GPA" name="sem6">
+        </div>
+      <div class="form-group">
+        <div class="form-group col-md-6"> 
+        <label>Semester 7:</label>
+          <input type="number" class="form-control" id="sem7" placeholder="Enter your Semester 7 GPA" name="sem7">
+        </div>
+
+      <div class="form-group">
+        <div class="form-group col-md-6"> 
+        <label>Semester 8:</label>
+
+          <input type="number" class="form-control" id="sem8" placeholder="Enter your Semester 8 GPA" name="sem8">
+        </div>
+      <div class="form-group">
+        <label>Number of Semesters:</label>
+          <input type="number" class="form-control" id="total" placeholder="Enter No.of Semesters you have Entered" name="total">
+        </div>
+    
+    <div class="form-group">
+        <div class="form-group col-md-6">        
+            <button type="reset"  class="btn btn-danger">Reset</button>
+    </div>
+    
+    <div class="form-group">
+        <button id="cal" type="button"   class="btn btn-success">Calculate</button>        
+        
+    </div>
+    </div>
+    
+  </form>
+  <h3 style="color:rgb(241, 13, 127)" id="res1">  </h3>
+  
+
+</div>
+<script>
+    var val1=0;
+    var val2=0; var val3=0; var val4=0;var val5=0; var val6=0; var val7=0; var val8=0; 
+    var sum=0;
+    var totalal=0;
+    document.getElementById("sem1").addEventListener("blur",sem1,false);
+    document.getElementById("sem2").addEventListener("blur",sem2,false);
+    document.getElementById("sem3").addEventListener("blur",sem3,false);
+    document.getElementById("sem4").addEventListener("blur",sem4,false);
+    document.getElementById("sem5").addEventListener("blur",sem5,false);
+    document.getElementById("sem6").addEventListener("blur",sem6,false);
+    document.getElementById("sem7").addEventListener("blur",sem7,false);
+    document.getElementById("sem8").addEventListener("blur",sem8,false);
+    document.getElementById("total").addEventListener("blur",total,false);
+    document.getElementById("cal").addEventListener("focus",calculate,false);
+    function total()
+    {
+        totalal = document.getElementById("cgpa").elements.namedItem("total").value; 
+        totalal =parseFloat(totalal);
+    }
+    function sem1()
+    {
+        
+           val1 = document.getElementById("cgpa").elements.namedItem("sem1").value; 
+           val1 =parseFloat(val1);
+    }
+    function sem2()
+    {
+           val2 = document.getElementById("cgpa").elements.namedItem("sem2").value; 
+           val2 =parseFloat(val2);
+    }
+    function sem3()
+    {
+       
+           val3 = document.getElementById("cgpa").elements.namedItem("sem3").value; 
+           val3 =parseFloat(val3);       
+    }
+    function sem4()
+    {
+        
+           val4 = document.getElementById("cgpa").elements.namedItem("sem4").value; 
+           val4 =parseFloat(val4);
+    }
+    function sem5()
+    {
+      
+           val5 = document.getElementById("cgpa").elements.namedItem("sem5").value; 
+           val5 =parseFloat(val5);
+    }
+    function sem6()
+    {
+       
+           val6 = document.getElementById("cgpa").elements.namedItem("sem6").value; 
+           val6 =parseFloat(val6);
+     }
+    function sem7()
+    {
+        
+           val7 = document.getElementById("cgpa").elements.namedItem("sem7").value; 
+           val7 =parseFloat(val7);
+    }
+    function sem8()
+    {
+        
+           val8 = document.getElementById("cgpa").elements.namedItem("sem8").value; 
+           val8 =parseFloat(val8);
+    }
+   
+    function calculate()
+    {
+      urollno=document.getElementById("rollno").value;
+        sum = val1+val2+val3+val4+val5+val6+val7+val8;
+        document.getElementById("res1").innerHTML =  " The CGPA of "+urollno+ " is "+sum/totalal;
+       
+    }
+</script>
+</body>
+<footer>
+    <h4 style="color: rgb(43, 7, 247);">RAMKISHORE.D-18ITR079</h4>
+</footer>
+</html>
